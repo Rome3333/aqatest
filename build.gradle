@@ -1,0 +1,24 @@
+apply plugin: 'groovy'
+
+repositories {
+    jcenter()
+}
+
+sourceSets {
+	test {
+		groovy {srcDir 'src/main/groovy'}
+	}
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.7'
+    compile 'org.spockframework:spock-core:1.0-groovy-2.4'
+    compile group: 'org.twitter4j', name: 'twitter4j-core', version: '4.0.6'
+	
+	testCompile( 'com.athaydes:spock-reports:1.2.13' ) {
+		transitive = false
+	}
+	testCompile 'org.slf4j:slf4j-api:1.7.13'
+	testCompile 'org.slf4j:slf4j-simple:1.7.13'
+}
+
